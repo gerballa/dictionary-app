@@ -1,0 +1,59 @@
+<div class="wrapper">
+    <div class="main-container">
+        <h1>English Dictionary</h1>
+
+        <mat-form-field appearance="outline">
+            <input (keydown.enter)="fetchWord()"  matInput type="text" [(ngModel)]="searchWords">
+        </mat-form-field>
+        <button mat-raised-button color="accent" type="button" [disabled]="buttonDisabled "
+                (click)="fetchWord()">Search
+        </button>
+
+
+        <mat-card *ngIf="notFound === true">
+
+            <mat-card-title>
+                Error
+            </mat-card-title>
+
+            <mat-card-content>
+                We could not found any word for the provided input.
+            </mat-card-content>
+        </mat-card>
+
+        <div *ngIf="notFound === false">
+            <div *ngFor="let item of results">
+                <p>
+                    <b>The word you searched:</b> {{ item.word }}
+                </p>
+                <p>
+                    <b>The pronunciation:</b> {{ item.phonetic }}
+                </p>
+
+                <div class="audioPlayer" *ngFor="let item of item.phonetics">
+                    <span>{{ item.text }}</span>
+                    <audio controls>
+                        <source src={{item.audio}} type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+                <br>
+                <div *ngFor="let meaning of item.meanings; let i = index">
+                    <b>Part of speech:</b>
+                    <p>{{ meaning.partOfSpeech }}</p>
+                    <b>Definitions:</b>
+                    <div *ngFor="let d of meaning.definitions ">
+                        <p> {{ d.definition }}</p>
+                        <div *ngIf="d.example != null">
+                            <b>Example:</b>
+                            <p>{{ d.example }}</p>
+                        </div>
+                    </div>
+                    <hr style="border-top: dashed 1px;"/>
+                </div>
+                <hr>
+            </div>
+        </div>
+    </div>
+</div>
+

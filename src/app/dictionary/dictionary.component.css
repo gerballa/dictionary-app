@@ -1,0 +1,42 @@
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+.main-container {
+    max-width: 800px;
+    margin: 8px;
+}
+
+
+input[type="text"] {
+    width: 50%;
+    box-sizing: border-box;
+}
+
+button[type="button"] {
+    margin: 0 10px;
+    height: 56px;
+}
+
+mat-form-field {
+    width: 300px;
+}
+
+mat-card {
+    box-shadow:-5px 5px 11px 1px rgb(217 217 217);
+}
+
+.audioPlayer{
+    display: flex;
+    align-content: center;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+mat-card-title{
+    padding-top: 10px;
+    padding-left: 16px;
+}
