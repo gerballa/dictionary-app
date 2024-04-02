@@ -7,4 +7,4 @@ Delve into the origins of words, uncover fascinating histories, and marvel at th
 
 Whether you're a student, a professional, or simply a lover of language, we're here to support and inspire you on your linguistic journey. So why wait? Let's embark on this adventure together, as we navigate the boundless world of words.
 
-Click me : https://english-dictionary-app-6220f.web.app/
+ https://english-dictionary-app-6220f.web.app/
